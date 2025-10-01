@@ -1,0 +1,32 @@
+rDiagram
+    READERS ||--o{ BOOKINGS : makes
+    BOOKINGS }o--|| BOOKS : has
+    BOOKS ||--o{ POSITIONS : has
+
+    READERS {
+        int id PK
+        string first_name
+        string last_name
+    }
+
+    BOOKINGS {
+        int id PK
+        date start_date
+        date end_date
+        int reader_id FK
+        int book_id FK
+    }
+
+    BOOKS {
+        int id PK
+        string title
+        string author
+        string genre
+    }
+
+    POSITIONS {
+        int id PK
+        string location
+        string status
+        int book_id FK
+    }
